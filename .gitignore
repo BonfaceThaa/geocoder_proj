@@ -3,3 +3,6 @@
 
 # DLLs, binary and modules
 __pycache__/
+
+# data
+geocoder/reverse_geo/data
