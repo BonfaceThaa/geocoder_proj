@@ -14,5 +14,8 @@ ward_shp = Path(__file__).resolve().parent / 'data' / 'admin' / 'admin.shp'
 
 
 def run(verbose=True):
+    """
+    Function to load Wards data
+    """
     lm = LayerMapping(Wards, str(ward_shp), wards_mapping, transform=False)
     lm.save(strict=True, verbose=verbose)

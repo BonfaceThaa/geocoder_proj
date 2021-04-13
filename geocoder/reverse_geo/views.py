@@ -8,10 +8,13 @@ from .models import Wards
 
 
 class WardsViewset(viewsets.ModelViewSet):
+    """
+    A ViewSet for filtering wards based on provided lat and long
+    """
     serializer_class = WardSerializer
     queryset = Wards.objects.all()
 
-    @action(detail=False, methods=['get'])
+    @action(detail=False)
     def get_admin(self, request):
         lat = request.GET.get('lat', None)
         long = request.GET.get('long', None)
@@ -23,5 +26,3 @@ class WardsViewset(viewsets.ModelViewSet):
 
             return Response(serialized.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_400_BAD_REQUEST)
-
-
