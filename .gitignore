@@ -3,6 +3,8 @@
 
 # DLLs, binary and modules
 __pycache__/
+geocoder/geocoder.sock
+geocoder/static
 
 # data
 geocoder/reverse_geo/data

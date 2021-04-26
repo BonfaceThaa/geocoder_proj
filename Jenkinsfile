@@ -15,7 +15,7 @@ node {
         git branch: 'main', url: 'https://github.com/BonfaceThaa/geocoder_proj.git'
         }
 
-    stage ("Environment Setup") {
+    stage ("Environmentch Setup") {
         sh 'python3 -m venv GeoEnv'
         withPythonEnv("${pwd()}/GeoEnv/bin/python3") {
         sh 'pip install -r geocoder/requirements.txt'
