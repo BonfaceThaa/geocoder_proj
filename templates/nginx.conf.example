@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name localhost 172.18.6.39;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/shadowfox/projects/geocoder_proj/geocoder;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/shadowfox/projects/geocoder_proj/geocoder/geocoder.sock;
+    }
+}
